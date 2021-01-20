@@ -1,0 +1,134 @@
+@import '~antd/es/style/themes/default.less';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+  background: @layout-body-background;
+
+  :global(.ant-layout-footer) {
+    background: transparent;
+  }
+}
+
+.lang {
+  width: 100%;
+  height: 40px;
+  line-height: 44px;
+  text-align: right;
+
+  :global(.ant-dropdown-trigger) {
+    margin-right: 24px;
+  }
+}
+
+.content {
+  flex: 1;
+  padding: 32px 0;
+}
+
+@media (min-width: @screen-md-min) {
+  .container {
+    background-image: url('https://open.saintic.com/api/bingPic/');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .content {
+    padding: 32px 0 24px;
+  }
+}
+
+.top {
+  text-align: center;
+}
+
+.header {
+  height: 44px;
+  line-height: 44px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  vertical-align: top;
+  filter: contrast(150%) brightness(110%);
+}
+
+.h {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 1;
+  width: 30px;
+  height: 10px;
+  background: #0ebeff;
+
+  &::before {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 10px solid #24f6f0;
+    border-top: none;
+    border-bottom: none;
+    content: '';
+  }
+}
+
+.h:last-child {
+  top: 23px;
+  left: 3px;
+  z-index: 100;
+  background: #fe2d52;
+  mix-blend-mode: lighten;
+  animation: moveLeft 3s;
+
+  &::before {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 10px solid #fe2d52;
+    border-top: none;
+    border-bottom: none;
+    content: '';
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translate(1000px);
+  }
+  50% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.title {
+  position: relative;
+  top: 2px;
+  color: @heading-color;
+  font-weight: 600;
+  font-size: 33px;
+  font-family: Avenir, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.desc {
+  margin-top: 12px;
+  margin-bottom: 40px;
+  color: @text-color-secondary;
+  font-size: @font-size-base;
+}

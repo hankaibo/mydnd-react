@@ -1,0 +1,121 @@
+@import '~antd/es/style/themes/default.less';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+@media (max-width: @screen-xs) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+
+        > span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// 兼容IE11
+@media screen and(-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body .ant-design-pro > .ant-layout {
+    min-height: 100vh;
+  }
+}
+
+// ============ [ Tree ] =============
+.ant-tree-show-line .ant-tree-switcher {
+  font-size: 17px; // 默认继承为14px
+}
+.selected {
+  color: @primary-color;
+}
+
+// ============ [ 一些页面公共样式 ] =============
+// 页面通用表格样式
+.tableList {
+  .tableListOperator {
+    position: relative;
+    margin-bottom: 16px;
+
+    .ant-btn {
+      margin-right: 8px;
+    }
+  }
+
+  :global {
+    .ant-table-thead > tr > th,
+    .ant-table-tbody > tr > td {
+      white-space: nowrap;
+    }
+
+    .ant-table-tbody > tr > td > .ant-divider-vertical:last-child {
+      display: none;
+    }
+  }
+}
+
+// 页面通用表单样式
+.form {
+  .ant-btn + .ant-btn {
+    margin-left: 8px;
+  }
+}
+
+.disabled {
+  display: inline-block;
+  cursor: not-allowed;
+
+  > span {
+    color: @disabled-color;
+    text-shadow: none;
+    background-color: @disabled-bg;
+    box-shadow: none;
+    pointer-events: none;
+
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+
+  &:hover {
+    color: @primary-color;
+  }
+}
