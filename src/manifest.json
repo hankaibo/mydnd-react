@@ -1,6 +1,6 @@
 {
-  "name": "My Drag and Drop",
-  "short_name": "my dnd",
+  "name": "MyDnD",
+  "short_name": "MyDnd",
   "display": "standalone",
   "start_url": "./?utm_source=homescreen",
   "theme_color": "#002140",
